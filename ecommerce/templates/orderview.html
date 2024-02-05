@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row ps-5">
+        <h1 >username:{{user.username}}</h1>
+    {% for i in orders %}
+    <div class="col-md-4">
+        <img src="{{i.product.image.url}}" height="200px" width="200px">
+    </div>
+    <div class="col-md-6">
+        product:{{i.product}}<br>
+        product price:{{i.product.price}}<br>
+        Delivery Address:{{i.address}}<br>
+        phone : {{i.phone}}<br>
+        No of Items:{{i.no_of_items}}<br>
+        Orderd on:{{i.ordered_date}}<br>
+        Delivery status:{{i.delivery_status}}<br>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
